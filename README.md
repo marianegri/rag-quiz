@@ -1,4 +1,4 @@
-# Quiz do Programa Renda Extra Ton — IA Generativa (Desafio Técnico)
+# Quiz do Programa Renda Extra Ton — IA Generativa
 
 Este projeto implementa um **quiz automatizado de 10 perguntas** sobre o regulamento do programa **Renda Extra Ton**, utilizando:
 
@@ -21,4 +21,5 @@ Este repositório contém todo o pipeline do desafio técnico solicitado.
 ✔ Validação das perguntas (JSON estruturado)  
 ✔ Execução do quiz no notebook  
 ✔ Feedback de erros com explicações  
+
 ✔ Relatório final em JSON
