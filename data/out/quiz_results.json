@@ -1,0 +1,159 @@
+{
+  "timestamp": "2025-11-15T19:17:53.227677Z",
+  "score": 2,
+  "total": 10,
+  "percent": 20.0,
+  "answers": [
+    {
+      "index": 1,
+      "question": "Para indicar um novo parceiro, qual é a primeira etapa a ser realizada pelo Usuário?",
+      "options": [
+        "Acessar a funcionalidade \"Indique um Parceiro\" na Plataforma Ton, na seção \"Renda Extra\" ou \"Renda Ton\".",
+        "Compartilhar o Link de Indicação Parceiro com um potencial novo parceiro que se mostrar interessado.",
+        "Fazer jus ao recebimento de um valor específico, calculado de acordo com as recompensas do Parceiro Indicado.",
+        "Garantir que o Parceiro Indicado tenha interesse em fazer parte do Renda Extra."
+      ],
+      "correct": "A",
+      "user": "A",
+      "is_correct": true,
+      "explanation": "A seção 7.2 (a) estabelece que o Usuário deve primeiro \"Acessar a funcionalidade 'Indique um Parceiro' na Plataforma Ton, na seção 'Renda Extra' ou 'Renda Ton', para gerar um link de indicação único\".",
+      "context_snippet": "6.1. Aos Usuários participantes do Renda Extra que concordem e atendam integralmente às condições estabelecidas (i) no Regulamento Renda Ton (\"Regulamento Renda Ton\"); (ii) neste Regulamento; (iii) no Termo; (iv) nas Diretrizes, assim como demonstrem ciência às disposições do Aviso de Privacidade, existirá a possibilidade de participar do Programa Renda Ton (\"Renda Ton\") e receber novos incentivos para a realização de indicações.\n6.2. Uma vez participante do Renda Ton, o Usuário poderá participar também de outros benefícios, campanhas e iniciativas (\"Campanhas Renda Ton\") mencionadas no Regulamento Renda Ton, tais como Indique TapTon, Cupom de desconto, dentre outros.\n6.3. Cada uma das Campanhas Renda Ton possui condições próprias que deverão ser conhecidas e respeitadas pelo Usuário interessado em participar. O não cumprimento das condições presentes nas Campanhas Renda Ton poderá ser m\n\n---\n\n7.1. O Indique um Parceiro consiste em um benefício disponível a todos os Usuários participan"
+    },
+    {
+      "index": 2,
+      "question": "Para dirimir as questões, qual foro foi eleito?",
+      "options": [
+        "O Foro da comarca de São Paulo, estado de São Paulo.",
+        "O foro que as partes decidirem ser o mais privilegiado.",
+        "Um foro definido somente após o surgimento do litígio.",
+        "Qualquer foro do estado de São Paulo, a critério das partes."
+      ],
+      "correct": "A",
+      "user": "A",
+      "is_correct": true,
+      "explanation": "O contexto afirma expressamente: 'Fica eleito o Foro da comarca de São Paulo, estado de São Paulo, em detrimento de outros por mais privilegiados que sejam, para dirimir as'.",
+      "context_snippet": "1.1 Todos os termos grafados em caixa alta, aplicáveis no singular e plural, nos gêneros masculino ou feminino, que não definidos no presente Termo terão o mesmo significado que lhes é atribuído nos Termos e Condições Gerais de Uso dos Serviços TON e seus Anexos, bem como nas diretrizes disponíveis em https://documentos.ton.com.br/rendaextra-todas-diretrizes.pdf (\"Diretrizes de Benefício do Programa Renda Ton\").\n\n---\n\n1.1. Todos os termos grafados em caixa alta, aplicáveis no singular e plural, nos gêneros masculino ou feminino, que não definidos neste Regulamento terão o mesmo significado que lhes é atribuído nos Termos e Condições Gerais de Uso dos Serviços TON e seus Anexos, bem como nas diretrizes disponíveis em https://documentos.ton.com.br/rendaextra-todas-diretrizes.pdf (\"Diretrizes do Programa Renda Ton\")\n\n---\n\nexpressamente neste Termo.\n5.7 Tolerância. A tolerância das Partes por qualquer descumprimento de obrigações assumidas neste Termo não será considerada novação, renúncia"
+    },
+    {
+      "index": 3,
+      "question": "Quando a recompensa será creditada na Conta de Pagamento do Usuário?",
+      "options": [
+        "Até o dia 10 do mês em que a indicação é feita.",
+        "Imediatamente após a validação da indicação pelo Pagar.me.",
+        "Apenas após a realização de 3 indicações válidas dentro do mês.",
+        "Até o dia 10 do mês subsequente à indicação, desde que a validação ocorra no mesmo mês."
+      ],
+      "correct": "D",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "O pagamento da recompensa ocorrerá até o dia 10 (dez) do mês subsequente à sua indicação, desde que a validação, pelo Pagar.me, ocorra no mesmo mês da indicação.",
+      "context_snippet": "rmativas e não vinculativas. O Pagar.me não garante a precisão ou a atualidade do status apresentado, reservando-se ao direito de retificar tais informações, a qualquer tempo, sem que isso implique em responsabilidade ou obrigação por parte da Pagar.me.\n\n---\n\ndências das ações corretivas adotadas.\n9.8. O Pagar.me não será responsabilizado pelo Tratamento de Dados Pessoais realizado pelo Usuário, permanecendo o Usuário, única e exclusivamente, responsável perante os Titulares, às autoridades competentes e/ou quaisquer terceiros relacionados.\n9.8.1. Caso o Pagar.me seja demandado por qualquer pessoa física ou jurídica, incluindo autoridades públicas, em razão do Tratamento de Dados Pessoais atribuível ao Usuário, é assegurado ao Pagar.me exercer o direito de regresso contra o Usuário, sem prejuízo do ressarcimento de quaisquer despesas judiciais ou extrajudiciais que o Pagar.me vier a incorrer, incluindo, mas não se limitando a multas administrativas, honorários advocatícios, periciais e"
+    },
+    {
+      "index": 4,
+      "question": "Qual a multa não compensatória que o Pagar.me pode aplicar?",
+      "options": [
+        "O equivalente a 12 vezes a última recompensa paga.",
+        "R$ 10.000,00.",
+        "12 vezes a última recompensa paga ou R$ 10.000,00, o que for menor.",
+        "12 vezes a última recompensa paga ou R$ 10.000,00, o que for maior."
+      ],
+      "correct": "D",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "Conforme o item 10.3 c), a multa não compensatória pode ser equivalente a 12 vezes a última recompensa paga pelo Pagar.me ao Usuário infrator, ou R$ 10.000,00, aplicando-se o que for maior.",
+      "context_snippet": "ação: o Pagar.me pode emitir uma advertência por escrito ao Usuário infrator, exigindo a correção ou a suspensão de determinada conduta de forma imediata; b) Suspensão: o Pagar.me pode suspender o cupom de indicação do Usuário infrator; c) Multa: o Pagar.me pode aplicar multa não compensatória, equivalente a (i) 12 (doze) vezes a última recompensa paga pelo Pagar.me ao Usuário infrator, ou (ii) R$\n10.000,00 (dez mil reais), o que for maior; e/ou d) Descredenciamento: o Pagar.me pode rescindir imediatamente a relação com o Usuário infrator, retirando o seu acesso à Plataforma Ton e encerrando os benefícios e privilégios deste.\n10.3.1. As penalidades previstas acima possuem caráter individual e poderão ser cumulativas, conforme a gravidade e a natureza das infrações cometidas. A aplicação de qualquer penalidade não exime o Usuário do cumprimento integral das suas obrigações assumidas, nem\n\n---\n\n10.1. O Usuário concorda em cumprir estritamente todas as Diretrizes e os Regulamentos estabel"
+    },
+    {
+      "index": 5,
+      "question": "Qual a condição para que o Usuário comece a receber a recompensa pelo Parceiro Indicado?",
+      "options": [
+        "O Parceiro Indicado deve realizar no mínimo 3 indicações válidas acumuladas ao longo dos primeiros dois meses após o cadastro.",
+        "O Parceiro Indicado deve realizar 3 indicações válidas no mês de cadastro e mais 3 indicações válidas no mês seguinte.",
+        "O Parceiro Indicado deve realizar ao menos 3 indicações válidas dentro de um único mês, sendo este o mês de cadastro ou o mês subsequente.",
+        "O Parceiro Indicado deve realizar pelo menos 3 indicações válidas, que serão consideradas a qualquer tempo após o cadastro."
+      ],
+      "correct": "C",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "Para que o Usuário comece a receber a recompensa, o Parceiro Indicado precisa ter realizado pelo menos 3 indicações válidas dentro de um mês, que pode ser o mês de cadastro ou o mês seguinte ao do cadastro. As indicações não são cumulativas entre os meses.",
+      "context_snippet": "a acima, o Parceiro Indicado precisa ter realizado pelo menos 3 (três) indicações válidas (conforme abaixo definido) dentro do mês de cadastro ou até o mês seguinte ao do cadastro (e.g. se o Parceiro Indicado se cadastrou em 10 de maio, ele precisa fazer as 3 (três) indicações válidas no mês de maio ou as 3 (três) indicações válidas no mês de junho para que o Usuário comece a receber a recompensa). As indicações não são cumulativas entre os meses, ou seja, devem ser totalizadas 3 (três) indicações válidas dentro de um mês.\n7.4.2. Por indicação válida, entende-se a indicação de Equipamentos do Ton que sejam (i) efetivamente convertidas em contratação pelos potenciais Novos Clientes; e (ii) realizadas respeitando os critérios e limites previstos neste Regulamento.\n7.5. O Pagar.me envidará seus melhores esforços para disponibilizar, assim que possível, as informações sobre as indicações e a\n\n---\n\n7.1. O Indique um Parceiro consiste em um benefício disponível a todos os Usuários participan"
+    },
+    {
+      "index": 6,
+      "question": "Como o valor da recompensa para indicações válidas é determinado?",
+      "options": [
+        "Com base no tipo de Equipamento adquirido pelo Novo Cliente.",
+        "De acordo com uma tabela fixa de valores, independentemente do nível do Usuário.",
+        "Pelo nível do Usuário na trilha de benefícios, aumentando à medida que o Usuário avança.",
+        "É definido mensalmente por sorteio entre todos os participantes."
+      ],
+      "correct": "C",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "A recompensa é determinada com base no nível do Usuário na trilha de benefícios, e seu valor será progressivamente maior conforme o Usuário avançar para níveis mais elevados.",
+      "context_snippet": "nhas Renda Ton possui condições próprias que deverão ser conhecidas e respeitadas pelo Usuário interessado em participar. O não cumprimento das condições presentes nas Campanhas Renda Ton poderá ser motivo de penalização nos termos dos respectivos regulamentos.\n6.4. A recompensa a ser recebida pelo Usuário pelas indicações válidas será determinada com base no nível em que ele se encontra na trilha de benefícios. Desta forma, à medida que o Usuário avançar para níveis mais elevados dentro da trilha, o valor da recompensa também será progressivamente maior, conforme estabelecido. O cálculo e o valor das recompensas serão divulgados e atualizados periodicamente na Plataforma Ton ou em https://www.ton.com.br/renda-ton/.\n\n---\n\n6.1. Caso Você seja descredenciado do Renda Extra, o Ton se reserva o direito de retirá-lo da Campanha, conforme previsto no Regulamento do Renda Extra, disponível em https://documentos.ton.com.br/regulamento-renda-extra.pdf.\n6.2. Esta Campanha não exclui ou afeta as "
+    },
+    {
+      "index": 7,
+      "question": "Sobre o tratamento de Dados Pessoais de Clientes e/ou Novos Clientes, qual a orientação dada ao Usuário?",
+      "options": [
+        "O Usuário deve coletar todos os Dados Pessoais para realizar o cadastro dos novos clientes.",
+        "A solicitação de quaisquer Dados Pessoais pelo Usuário é totalmente proibida em todas as circunstâncias.",
+        "O Usuário deve apenas solicitar Dados Pessoais essenciais para o cumprimento das Normas e regulamentações.",
+        "Tanto o TON quanto o Pagar.me desestimulam o tratamento de Dados Pessoais pelo Usuário, salvo para a finalidade de viabilizar a entrega de equipamentos."
+      ],
+      "correct": "D",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "O contexto, nas cláusulas 4.13 e 5.2, indica que o TON e o Pagar.me desestimulam o Usuário a solicitar ou tratar Dados Pessoais, exceto quando estritamente necessário para viabilizar a entrega de equipamentos.",
+      "context_snippet": "9.1. Para fins da presente Cláusula, os termos iniciados em letra maiúscula \"Controlador\", \"Dado Pessoal\", \"Base Legal\", \"Tratamento\" e \"Titular\", independentemente de estarem no feminino ou masculino, plural ou singular, terão o significado que lhes é atribuído no art. 5º, da Lei nº 13.709/18 (\"LGPD\"), conforme alterada.\n9.2. O Usuário se compromete expressamente a cumprir toda a legislação e normas aplicáveis sobre proteção de Dados Pessoais, incluindo a Lei Federal nº 13.709/2018 (\"LGPD\") e as regulamentações emitidas por autoridades competentes (\"Normas\") no âmbito de sua atuação no Renda Extra. Nesse sentido, o Tratamento de Dados Pessoais realizado no âmbito deste Regulamento se dará de acordo com as Normas, com o Termo e o disposto nesta cláusula.\n9.3. Exclusivamente para o Tratamento de Dados Pessoais realizados no âmbito deste Regulamento - incluindo seus demais regulamentos com\n\n---\n\no pelo Cliente e/ou Novo Cliente, deverá ser realizada diretamente ao TON, sendo dever do Usu"
+    },
+    {
+      "index": 8,
+      "question": "Qual a consequência para o Usuário que em algum mês não atingir o Nível Especialista I?",
+      "options": [
+        "Terá a participação no programa Renda Extra cancelada imediatamente.",
+        "Poderá continuar solicitando novos Equipamentos, mas com um limite reduzido.",
+        "Perderá definitivamente o direito de repassar os Equipamentos já em sua posse.",
+        "Perderá o direito de solicitar novos Equipamentos até que atinja novamente esse nível."
+      ],
+      "correct": "D",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "Conforme a Cláusula 3.1.1, o Usuário que deixar de atingir o Nível Especialista I perderá o direito de solicitar novos Equipamentos até que volte a atingi-lo.",
+      "context_snippet": "3.1 Elegibilidade. Será elegível ao Pronta Entrega o Usuário que cumprir cumulativamente, os critérios abaixo: i. Ser participante do Renda Extra; ii. Ter atingido no mês anterior o Nível Especialista I ou superior, conforme os critérios estabelecidos nas Diretrizes de Benefício do Programa Renda Ton, durante sua participação no Renda Extra; e iii. Não ter débitos de qualquer natureza em aberto com o Ton.\n3.1.1 O Usuário que em algum mês deixar de atingir o Nível Especialista I, perderá o direito de solicitar novos Equipamentos até que volte a atingi-lo, desde que continue atendendo aos demais critérios de elegibilidade aqui descritos.\n3.1.2 Sem prejuízo da Cláusula 3.1.1. acima, os Usuários que tenham perdido o direito de solicitar novos Equipamentos, mas tiverem em sua posse Equipamentos decorrentes de solicitações anteriores, poderão continuar repassando os mesmos sem qualquer prejuíz\n\n---\n\nque tenham perdido o direito de solicitar novos Equipamentos, mas tiverem em sua posse Equipa"
+    },
+    {
+      "index": 9,
+      "question": "O que é necessário para um Usuário participar do Programa Renda Ton e receber novos incentivos?",
+      "options": [
+        "Concordância e atendimento integral apenas ao Regulamento Renda Ton e ao Termo.",
+        "Conhecimento e respeito das condições próprias de cada Campanha Renda Ton.",
+        "Ciência às disposições do Aviso de Privacidade e a aceitação das Diretrizes, somente.",
+        "Concordância e atendimento integral ao Regulamento Renda Ton, a este Regulamento, ao Termo, às Diretrizes e ciência às disposições do Aviso de Privacidade."
+      ],
+      "correct": "D",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "A participação no Programa Renda Ton e o recebimento de incentivos requerem a concordância e o atendimento integral ao Regulamento Renda Ton, a este Regulamento, ao Termo, às Diretrizes e a ciência às disposições do Aviso de Privacidade, conforme item 6.1.",
+      "context_snippet": "6.1. Aos Usuários participantes do Renda Extra que concordem e atendam integralmente às condições estabelecidas (i) no Regulamento Renda Ton (\"Regulamento Renda Ton\"); (ii) neste Regulamento; (iii) no Termo; (iv) nas Diretrizes, assim como demonstrem ciência às disposições do Aviso de Privacidade, existirá a possibilidade de participar do Programa Renda Ton (\"Renda Ton\") e receber novos incentivos para a realização de indicações.\n6.2. Uma vez participante do Renda Ton, o Usuário poderá participar também de outros benefícios, campanhas e iniciativas (\"Campanhas Renda Ton\") mencionadas no Regulamento Renda Ton, tais como Indique TapTon, Cupom de desconto, dentre outros.\n6.3. Cada uma das Campanhas Renda Ton possui condições próprias que deverão ser conhecidas e respeitadas pelo Usuário interessado em participar. O não cumprimento das condições presentes nas Campanhas Renda Ton poderá ser m\n\n---\n\nversões deste Regulamento.\n7.9. Fica eleito o Foro da Comarca de São Paulo, Estado de São Pau"
+    },
+    {
+      "index": 10,
+      "question": "Qual característica é obrigatória para o ponto físico de um Usuário?",
+      "options": [
+        "Pode exibir produtos de qualquer marca concorrente, desde que sejam artigos promocionais.",
+        "É permitido mencionar outras empresas, contanto que seus produtos não estejam no balcão principal.",
+        "Precisa ser exclusivo do Ton, sem menção a outras empresas ou produtos/maquininhas de concorrentes no balcão.",
+        "O acompanhamento por e-mail com o time Renda Ton é opcional após a validação inicial do projeto."
+      ],
+      "correct": "C",
+      "user": "A",
+      "is_correct": false,
+      "explanation": "O ponto físico do Usuário precisa ser exclusivo do Ton, não podendo conter menção a outras empresas, tampouco produtos ou maquininhas de concorrentes dividindo o balcão com produtos do Ton.",
+      "context_snippet": "ão da Propriedade Intelectual do Ton e recolhimento dos referidos itens;\nd. É indispensável que o Usuário respeite as regras de utilização de marca descritas no Guia de Uso de Marca; e. O Usuário deverá manter um acompanhamento por e-mail com o time Renda Ton, durante todo o processo de validação até o final da produção do projeto do ponto físico, para receber a aprovação e o Selo; f. O Usuário deve manter contato com o time Ton sempre que solicitadas informações referente ao seu ponto, como por exemplo, para possíveis renovações do seu Selo; g. O ponto físico do Usuário precisa ser exclusivo do Ton, não podendo conter menção a outras empresas, tampouco produtos ou maquininhas de concorrentes dividindo o balcão com produtos do Ton;\n2.7. Independente da modalidade que o Usuário opte por prosseguir, o fluxo e os prazos descritos no Regulamento do Renda Ton deverão ser respeitados.\n2.7.1. É\n\n---\n\nmentos a serem dispostos no interior do ponto físico) que ostentem a marca \"Ton\", \"Stone\" ou "
+    }
+  ],
+  "questions_count": 10
+}
