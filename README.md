@@ -21,5 +21,4 @@ Este repositório contém todo o pipeline do desafio técnico solicitado.
 ✔ Validação das perguntas (JSON estruturado)  
 ✔ Execução do quiz no notebook  
 ✔ Feedback de erros com explicações  
-
 ✔ Relatório final em JSON
