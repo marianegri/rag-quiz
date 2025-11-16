@@ -1,41 +1,88 @@
+"""
+Módulo de Chunking de Texto
+===========================
+
+Este módulo é responsável por dividir textos longos em chunks (pedaços) menores
+com sobreposição, facilitando o processamento e embedding de documentos.
+
+Autor: Maria Negri
+"""
+
 import sys
 sys.dont_write_bytecode = True
-# mcq_toolkit/chunker.py
-from typing import List, Dict
-from uuid import uuid4
-from pathlib import Path
-import json
 
-def chunk_text(text: str, chunk_size: int = 900, overlap: int = 200) -> List[tuple]:
+import json
+from pathlib import Path
+from typing import List, Dict, Tuple
+from uuid import uuid4
+
+
+# ==================== CONSTANTES ====================
+
+DEFAULT_CHUNK_SIZE = 900
+DEFAULT_OVERLAP = 200
+MIN_CHUNK_LENGTH = 50
+
+def chunk_text(
+    text: str, 
+    chunk_size: int = DEFAULT_CHUNK_SIZE, 
+    overlap: int = DEFAULT_OVERLAP
+) -> List[Tuple[int, int, int, str]]:
     """
-    Mesma lógica do seu notebook (desafio.py).
-    Retorna lista de tuplas: (chunk_index, char_start, char_end, chunk_text)
+    Divide texto longo em chunks com sobreposição.
+    
+    Args:
+        text: Texto a ser dividido
+        chunk_size: Tamanho máximo de cada chunk em caracteres
+        overlap: Número de caracteres de sobreposição entre chunks consecutivos
+        
+    Returns:
+        Lista de tuplas (chunk_index, char_start, char_end, chunk_text)
     """
     if not isinstance(text, str) or not text:
         return []
 
+    if not text:
+        return []
+        
     chunks = []
     start = 0
-    L = len(text)
+    text_length = len(text)
     idx = 0
-    while start < L:
-        end = min(start + chunk_size, L)
+    
+    while start < text_length:
+        end = min(start + chunk_size, text_length)
         chunk = text[start:end].strip()
-        if len(chunk) >= 50:  # ignora pedaços muito curtos
+        
+        # Ignora pedaços muito curtos
+        if len(chunk) >= MIN_CHUNK_LENGTH:
             chunks.append((idx, start, end, chunk))
             idx += 1
-        if end == L:
+            
+        if end == text_length:
             break
+            
         start = end - overlap
+        
     return chunks
 
 
-def df_to_chunks_list(df, chunk_size: int = 900, overlap: int = 200) -> List[Dict]:
+def df_to_chunks_list(
+    df, 
+    chunk_size: int = DEFAULT_CHUNK_SIZE, 
+    overlap: int = DEFAULT_OVERLAP
+) -> List[Dict]:
     """
-    Recebe o DataFrame com colunas esperadas:
-      ['doc_name','section_number','section_title','page_start','page_end','content']
-    (como o retorno de extract_sections_grouped).
-    Retorna lista de dicionários (metadados + 'text') pronta para salvar/indexar.
+    Converte DataFrame de seções em lista de chunks com metadados.
+    
+    Args:
+        df: DataFrame com colunas ['doc_name', 'section_number', 'section_title', 
+            'page_start', 'page_end', 'content']
+        chunk_size: Tamanho máximo de cada chunk em caracteres
+        overlap: Número de caracteres de sobreposição entre chunks
+        
+    Returns:
+        Lista de dicionários contendo metadados e texto de cada chunk
     """
     out = []
     for _, row in df.iterrows():
@@ -56,9 +103,13 @@ def df_to_chunks_list(df, chunk_size: int = 900, overlap: int = 200) -> List[Dic
     return out
 
 
-def save_chunks_json(chunks_list: List[Dict], out_path: str):
+def save_chunks_json(chunks_list: List[Dict], out_path: str) -> None:
     """
-    Helper: salva a lista completa (com 'text') em JSON (utf-8).
+    Salva lista de chunks em arquivo JSON.
+    
+    Args:
+        chunks_list: Lista de dicionários com chunks e metadados
+        out_path: Caminho do arquivo JSON de saída
     """
     p = Path(out_path)
     p.parent.mkdir(parents=True, exist_ok=True)

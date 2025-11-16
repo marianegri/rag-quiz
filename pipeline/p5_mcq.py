@@ -1,25 +1,78 @@
+"""
+Módulo de Geração de Questões de Múltipla Escolha (MCQ)
+============================================================
+
+Este módulo usa LLM e Guardrails para gerar questões de múltipla escolha
+validadas e estruturadas a partir de contextos textuais.
+
+Autor: Maria Negri
+"""
+
 import sys
 sys.dont_write_bytecode = True
-import json
+
+from typing import List, Literal, Dict, Any
 from guardrails import Guard
 from pydantic import BaseModel, Field
-from typing import List, Literal
+
+
+# ==================== CONSTANTES ====================
+
+DEFAULT_MODEL = "gemini-2.5-flash"
+VALID_ANSWERS = ["A", "B", "C", "D"]
+
+# ==================== MODELOS DE DADOS ====================
 
 class MCQ(BaseModel):
-    question: str = Field(description="Pergunta direta, sem mencionar o texto")
-    options: List[str] = Field(min_items=4, max_items=4)
-    answer: Literal["A", "B", "C", "D"]
-    explanation: str
+    """
+    Modelo de dados para questões de múltipla escolha.
+    
+    Attributes:
+        question: Pergunta formulada de forma direta e objetiva
+        options: Lista com exatamente 4 alternativas
+        answer: Letra da resposta correta (A, B, C ou D)
+        explanation: Justificativa da resposta correta
+    """
+    question: str = Field(
+        description="Pergunta direta e objetiva, sem mencionar o texto"
+    )
+    options: List[str] = Field(
+        min_items=len(VALID_ANSWERS),
+        max_items=len(VALID_ANSWERS),
+        description="Lista com exatamente 4 alternativas"
+    )
+    answer: str = Field(
+        description="Letra da resposta correta (A, B, C ou D)"
+    )
+    explanation: str = Field(
+        description="Justificativa da resposta com base no contexto"
+    )
 
 mcq_guard = Guard(
     output_schema=MCQ.model_json_schema()
 )
 
-def generate_mcq_from_context(genai_client, context_text, model_name="gemini-2.5-flash"):
+def generate_mcq_from_context(
+    genai_client,
+    context_text: str,
+    model_name: str = DEFAULT_MODEL
+) -> Dict[str, Any]:
     """
-    Gera 1 MCQ em JSON usando google.generativeai + Guardrails (Pydantic).
-    Retorna dict com keys: question, options, answer, explanation.
+    Gera uma questão de múltipla escolha validada a partir de um contexto.
+    
+    Args:
+        genai_client: Cliente da API Google Generative AI
+        context_text: Texto de contexto para geração da questão
+        model_name: Nome do modelo LLM a usar
+        
+    Returns:
+        Dicionário com:
+            - question: Texto da pergunta
+            - options: Lista com 4 alternativas
+            - answer: Letra da resposta correta (A-D)
+            - explanation: Justificativa da resposta
     """
+
     prompt = f"""
     Crie UMA pergunta de múltipla escolha com base APENAS no contexto abaixo.
     IMPORTANTE:

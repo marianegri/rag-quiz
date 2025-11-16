@@ -1,61 +1,108 @@
+"""
+Módulo de Recuperação (Retriever)
+====================================
+
+Este módulo implementa busca semântica usando FAISS e embeddings.
+Permite buscar chunks relevantes e construir contextos para LLMs.
+
+Autor: Maria Negri
+"""
 
 import sys
 sys.dont_write_bytecode = True
-# 4_retriever.py
-import numpy as np
-from typing import List, Dict, Any, Optional
 
-EPS = 1e-10
+from typing import List, Dict, Any, Optional
+import numpy as np
+
+
+# ==================== CONSTANTES ====================
+
+EPS = 1e-10  # Epsilon para evitar divisão por zero
+DEFAULT_TOP_K = 5
+DEFAULT_CHAR_LIMIT = 3000
 
 def search_query(
     query: str,
     index,
     metas: List[Dict[str, Any]],
+    embed_model: str,
     chunks_list: Optional[List[Dict[str, Any]]] = None,
     genai_client = None,
-    k: int = 5,
-    embed_model: str = "models/text-embedding-004",
+    k: int = DEFAULT_TOP_K,
     eps: float = EPS,
     verbose: bool = False,
 ) -> List[Dict[str, Any]]:
+    """
+    Busca chunks mais relevantes para uma query usando busca semântica.
+    
+    Args:
+        query: Texto da consulta
+        index: Índice FAISS previamente construído
+        metas: Lista de metadados correspondentes aos vetores no índice
+        chunks_list: Lista opcional com texto completo dos chunks
+        genai_client: Cliente da API Google Generative AI
+        k: Número de resultados a retornar
+        embed_model: Modelo de embedding a usar
+        eps: Epsilon para normalização
+        verbose: Se True, imprime informações de debug
+        
+    Returns:
+        Lista de dicionários com metadados, scores e texto dos chunks encontrados
+    """
 
     if genai_client is None:
-        raise ValueError("genai_client is required to embed the query")
+        raise ValueError("genai_client é obrigatório para gerar embedding da query")
 
-    r = genai_client.embed_content(model=embed_model, content=query)
-    q = np.array(r["embedding"], dtype=np.float32)
-    q = q / (np.linalg.norm(q) + eps)
-    q = q.reshape(1, -1)
+    try:
+        # Gera embedding da query
+        r = genai_client.embed_content(model=embed_model, content=query)
+        q = np.array(r["embedding"], dtype=np.float32)
+        # Normaliza para busca por produto interno
+        q = q / (np.linalg.norm(q) + eps)
+        q = q.reshape(1, -1)
 
-    D_scores, I_indices = index.search(q, k)
-    results = []
-    for score, idx in zip(D_scores[0], I_indices[0]):
-        idx = int(idx)
-        meta = metas[idx].copy()
-        chunk_text = None
-        if chunks_list is not None and len(chunks_list) == len(metas):
-            chunk_text = chunks_list[idx].get("text")
-        meta.update({
-            "_index": idx,
-            "_score": float(score),
-            "text": chunk_text
-        })
-        results.append(meta)
+        # Busca no índice FAISS
+        D_scores, I_indices = index.search(q, k)
+        
+        # Monta resultados com metadados e scores
+        results = []
+        for score, idx in zip(D_scores[0], I_indices[0]):
+            idx = int(idx)
+            meta = metas[idx].copy()
+            chunk_text = None
+            if chunks_list is not None and len(chunks_list) == len(metas):
+                chunk_text = chunks_list[idx].get("text")
+            meta.update({
+                "_index": idx,
+                "_score": float(score),
+                "text": chunk_text
+            })
+            results.append(meta)
 
-    if verbose:
-        print(f"search_query: query={query[:60]!r} -> returned {len(results)} hits")
+        if verbose:
+            print(f"search_query: query={query[:60]!r} -> returned {len(results)} hits")
 
-    return results
+        return results
+    
+    except Exception as e:
+        raise Exception(f"Erro na busca: {e}")
 
 
 def build_context_from_results(
     results: List[Dict[str, Any]],
-    char_limit: int = 3000,
+    char_limit: int = DEFAULT_CHAR_LIMIT,
     include_meta: bool = True
 ) -> str:
     """
-    Monta um contexto string a partir de results (retorno do search_query).
-    Evita duplicatas simples (primeiros 120 chars) e tenta truncar por sentença.
+    Constrói contexto textual a partir dos resultados de busca.
+    
+    Args:
+        results: Lista de resultados do search_query
+        char_limit: Limite máximo de caracteres para o contexto
+        include_meta: Se True, inclui metadados de cada chunk no contexto
+        
+    Returns:
+        String formatada com o contexto agregado
     """
     seen = set()
     parts = []
@@ -103,8 +150,14 @@ def build_queries_from_metas(
     n: int = 10
 ) -> List[str]:
     """
-    Cria até n queries baseadas em metas['section_title'].
-    Se não houver títulos suficientes, usa trechos de chunks_list como fallback.
+    Gera queries para MCQ baseadas em títulos de seções.
+    
+    Args:
+        metas: Lista de metadados dos chunks
+        n: Número máximo de queries a gerar
+        
+    Returns:
+        Lista de strings formatadas como prompts para geração de perguntas
     """
     titles = [m.get("section_title") for m in metas if m.get("section_title")]
     uniq = []
